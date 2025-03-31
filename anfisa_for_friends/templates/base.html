@@ -1,19 +1,15 @@
- <!-- base.html -->
- <!DOCTYPE html>
- <html lang="ru">
-   <head>
-   </head>
-   <body>
-     <header>
-       <p>Шапка страницы</p>
-     </header>
-     <main>
-       <!-- Изменяемая часть: разная на всех страницах -->
-       {% block content %}Контента пока нет :({% endblock %}
-     </main>
-     <footer>
-       <p>Подвал</p>
-     </footer>
-   </body>
- </html>
- 
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>
+      {% block title %}{% endblock %}
+    </title>
+  </head>
+  <body>
+    {% include "includes/header.html" %}
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+    {% include "includes/footer.html" %}   
+  </body>
+</html>
